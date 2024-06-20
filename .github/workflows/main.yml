@@ -5,8 +5,12 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
-    container:
-      image: linaro/wine-arm64:latest
     steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: docker-images
+          github-token: ${{ github.token }}
+          repository: msys2/msys2-docker
+          run-id: 9592572891
       - name: tmate
         uses: mxschmitt/action-tmate@v3
