@@ -5,16 +5,7 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
+    container: debian:bookworm
     steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: docker-images
-          github-token: ${{ github.token }}
-          repository: msys2/msys2-docker
-          run-id: 9592572891
-      - name: import images
-        run: |
-          zstd -dc experimental.tar.zst | docker load
-          zstd -dc devcontainer.tar.zst | docker load
       - name: tmate
         uses: mxschmitt/action-tmate@v3
