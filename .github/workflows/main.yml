@@ -5,7 +5,9 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
-    container: debian:bookworm
+    container:
+      image: debian:bookworm
+      options: --init --privileged
     steps:
       - name: tmate
         uses: mxschmitt/action-tmate@v3
