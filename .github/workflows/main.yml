@@ -6,8 +6,8 @@ jobs:
   main:
     runs-on: ubuntu-latest
     container:
-      image: debian:bookworm
-      options: --init --privileged
+      image: ghcr.io/msys2/msys2-docker-experimental:latest
+      #options: --init --privileged
     steps:
       - name: tmate
         uses: mxschmitt/action-tmate@v3
