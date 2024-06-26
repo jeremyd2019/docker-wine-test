@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/msys2/msys2-docker-experimental:latest
-      #options: --init --privileged
+      options: --init
     steps:
       - name: tmate
         uses: mxschmitt/action-tmate@v3
